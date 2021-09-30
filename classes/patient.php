@@ -1,5 +1,5 @@
 <?php
-class User {
+class patient {
     public $fname;
     public $lname;
     public $role;
