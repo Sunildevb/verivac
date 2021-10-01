@@ -83,3 +83,15 @@ function finduser($idcard)
     echo "User found";
   }
 }
+
+function listall () {
+global $conn;
+$go = "SELECT * FROM recipient";
+$result = $conn->query($go);
+$return[] = $result;
+return $return;
+}
+
+
+
+?>
