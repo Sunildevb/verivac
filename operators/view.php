@@ -48,7 +48,7 @@ include_once "../sql/sql.php";
 
 
                 #while ($row = $result) {
-                    echo ($result[0]->lname);
+                   print_r($results[0]);
                     echo '
                     
                     <tbody>
