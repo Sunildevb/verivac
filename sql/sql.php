@@ -88,8 +88,14 @@ function listall () {
 global $conn;
 $go = "SELECT * FROM recipient";
 $result = $conn->query($go);
-$return[] = $result;
-return $return;
+
+
+
+
+#$row = mysqli_fetch_assoc($result);
+#print_r($row);
+return $result;
+
 }
 
 

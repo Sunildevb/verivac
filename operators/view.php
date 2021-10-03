@@ -41,26 +41,40 @@ include_once "../sql/sql.php";
 
             <?php
 
-            $result[] = listall();
+            $result = listall();
             #echo $result['id'];
             #print_r ($result);
            
 
+            if($result){
+                if(mysqli_num_rows($result) > 0){
+                    while($row = mysqli_fetch_assoc($result)){
+                      $return[] = $row;  
+                      echo "
+                      <tbody>
+                      <tr>          
+                      <td>". $row["fname"]."</td>
+                      <td>". $row["mname"]."</td>
+                      <td>". $row["lname"]."</td>
+                      <td>". $row["address"]."</td>
+                      <td>". $row["dob"]."</td>
+                      <td>". $row["sex"]."</td>
+                      <td>". $row["facility"]."</td>
+                      <td>". $row["registration_no"]."</td>
+                      <td>". $row["idcard"]."</td>
+                      <td>". $row["doi"]."</td>
+                      </tr>";
+                    }
+                }
+              }
+
+           
+            #$fname = count($result);
+
 
                 #while ($row = $result) {
-                   print_r($results[0]);
-                    echo '
-                    
-                    <tbody>
-                <tr>
-                    <td>John</td>
-                    <td>Doe</td>
-                    <td>john@example.com</td>
-                </tr>
-                    
-                    
-                    
-                    ';
+                   
+                   
 
 
                 
