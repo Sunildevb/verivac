@@ -36,6 +36,7 @@ include_once "../sql/sql.php";
                     <th>Registration No.</th>
                     <th>ID No.</th>
                     <th>Date of Innoculation</th>
+                    <th>Edit Entry</th>
                 </tr>
             </thead>
 
@@ -50,20 +51,25 @@ include_once "../sql/sql.php";
                 if(mysqli_num_rows($result) > 0){
                     while($row = mysqli_fetch_assoc($result)){
                       $return[] = $row;  
-                      echo "
+                      echo '
                       <tbody>
                       <tr>          
-                      <td>". $row["fname"]."</td>
-                      <td>". $row["mname"]."</td>
-                      <td>". $row["lname"]."</td>
-                      <td>". $row["address"]."</td>
-                      <td>". $row["dob"]."</td>
-                      <td>". $row["sex"]."</td>
-                      <td>". $row["facility"]."</td>
-                      <td>". $row["registration_no"]."</td>
-                      <td>". $row["idcard"]."</td>
-                      <td>". $row["doi"]."</td>
-                      </tr>";
+                      <td>'. $row["fname"].'</td>
+                      <td>'. $row["mname"].'</td>
+                      <td>'. $row["lname"].'</td>
+                      <td>'. $row["address"].'</td>
+                      <td>'. $row["dob"].'</td>
+                      <td>'. $row["sex"].'</td>
+                      <td>'. $row["facility"].'</td>
+                      <td>'. $row["registration_no"].'</td>
+                      <td>'. $row["idcard"].'</td>
+                      <td>'. $row["doi"].'</td>
+                      <td><button type="button" class="btn btn-primary">Primary</button>
+                      <button type="button" class="btn btn-primary">Primary</button>
+                      <button type="button" class="btn btn-primary">Primary</button>
+                      
+                      </td>
+                      </tr>';
                     }
                 }
               }
