@@ -16,6 +16,11 @@ include_once "../sql/sql.php";
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+ 
+
+
+
 </head>
 
 <body>
@@ -24,7 +29,8 @@ include_once "../sql/sql.php";
         <h2>Hover Rows</h2>
         <p>The .table-hover class enables a hover state on table rows:</p>
         <table class="table table-hover">
-            <thead>
+        <caption>All Entries</caption>
+            <thead class="thead-dark"d>
                 <tr>
                     <th>First Name</th>
                     <th>Middle Name</th>
@@ -36,7 +42,7 @@ include_once "../sql/sql.php";
                     <th>Registration No.</th>
                     <th>ID No.</th>
                     <th>Date of Innoculation</th>
-                    <th>Edit Entry</th>
+                    <th>Edit/View Entry</th>
                 </tr>
             </thead>
 
@@ -64,9 +70,15 @@ include_once "../sql/sql.php";
                       <td>'. $row["registration_no"].'</td>
                       <td>'. $row["idcard"].'</td>
                       <td>'. $row["doi"].'</td>
-                      <td><button type="button" class="btn btn-primary">Primary</button>
-                      <button type="button" class="btn btn-primary">Primary</button>
-                      <button type="button" class="btn btn-primary">Primary</button>
+                      <td><button type="button" class="btn btn-default" aria-label="Edit">
+                      <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
+                    </button>
+                    <button type="button" class="btn btn-danger" aria-label="Delete">
+                    <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+                  </button>
+                  <button type="button" class="btn btn-info" aria-label="View QR">
+                  <span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>
+                </button>
                       
                       </td>
                       </tr>';
